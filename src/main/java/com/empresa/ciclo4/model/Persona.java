@@ -70,47 +70,31 @@ public class Persona {
         this.telefono = telefono;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 97 * hash + Objects.hashCode(this.id);
-        hash = 97 * hash + Objects.hashCode(this.nombre);
-        hash = 97 * hash + Objects.hashCode(this.apellido);
-        hash = 97 * hash + Objects.hashCode(this.correoElectronico);
-        hash = 97 * hash + Objects.hashCode(this.telefono);
-        return hash;
-    }
+    
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Persona other = (Persona) obj;
-        if (!Objects.equals(this.nombre, other.nombre)) {
-            return false;
-        }
-        if (!Objects.equals(this.apellido, other.apellido)) {
-            return false;
-        }
-        if (!Objects.equals(this.correoElectronico, other.correoElectronico)) {
-            return false;
-        }
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        return Objects.equals(this.telefono, other.telefono);
-    }
+	public int hashCode() {
+		return Objects.hash(apellido, correoElectronico, id, nombre, telefono);
+	}
 
-    @Override
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Persona other = (Persona) obj;
+		return Objects.equals(apellido, other.apellido) && Objects.equals(correoElectronico, other.correoElectronico)
+				&& Objects.equals(id, other.id) && Objects.equals(nombre, other.nombre)
+				&& Objects.equals(telefono, other.telefono);
+	}
+
+	@Override
     public String toString() {
         return "Persona{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", correoElectronico=" 
                 + correoElectronico + ", telefono=" + telefono + '}';
     }
+    
 }

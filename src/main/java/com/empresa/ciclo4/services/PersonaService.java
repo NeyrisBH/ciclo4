@@ -14,4 +14,5 @@ public interface PersonaService {
     public Persona crearPersona (Persona persona);
     public Persona actualizarPersona (Persona persona);
     public void eliminarPersonaPorId (Long id);
+    public void eliminarPersona (Persona persona);
 }

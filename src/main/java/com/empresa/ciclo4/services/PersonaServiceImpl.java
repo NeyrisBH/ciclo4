@@ -1,18 +1,21 @@
-package com.empresa.ciclo4.util;
+package com.empresa.ciclo4.services;
 
 import com.empresa.ciclo4.model.Persona;
 import com.empresa.ciclo4.repository.PersonaRepository;
-import com.empresa.ciclo4.services.PersonaService;
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author Usuario
  */
+@Service
 public class PersonaServiceImpl implements PersonaService {
-    
-    PersonaRepository repositorio;
+    @Autowired
+    private PersonaRepository repositorio;
 
     @Override
     public List<Persona> consultarPersonas() {
