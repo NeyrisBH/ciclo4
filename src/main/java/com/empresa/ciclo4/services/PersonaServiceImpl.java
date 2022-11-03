@@ -41,5 +41,10 @@ public class PersonaServiceImpl implements PersonaService {
     public void eliminarPersonaPorId(Long id) {
         repositorio.deleteById(id);
     }
+
+    @Override
+    public void eliminarPersona(Persona persona) {
+        repositorio.delete(persona);
+    }
     
 }

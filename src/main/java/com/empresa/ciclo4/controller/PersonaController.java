@@ -74,7 +74,7 @@ public class PersonaController {
 
 	@DeleteMapping
 	public ResponseEntity<?> eliminarPersona(@RequestBody Persona persona) {
-		servicio.eliminarPersonaPorId(persona.getId());
+		servicio.eliminarPersona(persona);
 		JSONObject mensajeEliminar = new JSONObject();
 		mensajeEliminar.put("mensaje", "El usuario fue eliminado correctamente");
 		return ResponseEntity.status(HttpStatus.OK).body(mensajeEliminar);

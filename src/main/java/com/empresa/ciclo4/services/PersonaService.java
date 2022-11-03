@@ -8,6 +8,7 @@ import java.util.Optional;
  *
  * @author Usuario
  */
+
 public interface PersonaService {
     public List<Persona> consultarPersonas();
     public Optional<Persona> consultarPersonaPorId(Long id);
