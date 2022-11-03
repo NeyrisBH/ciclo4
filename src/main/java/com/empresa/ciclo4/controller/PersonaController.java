@@ -74,10 +74,10 @@ public class PersonaController {
 
 	@DeleteMapping
 	public ResponseEntity<?> eliminarPersona(@RequestBody Persona persona) {
-		JSONObject mensajeErrorId = new JSONObject();
-		mensajeErrorId.put("mensaje", "El id no corresponde a la persona");
-		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(mensajeErrorId);
-		return ResponseEntity.status(HttpStatus.ACCEPTED).body(servicio.eliminarPersona(persona));
+		servicio.eliminarPersonaPorId(persona.getId());
+		JSONObject mensajeEliminar = new JSONObject();
+		mensajeEliminar.put("mensaje", "El usuario fue eliminado correctamente");
+		return ResponseEntity.status(HttpStatus.OK).body(mensajeEliminar);
 	}
 
 	@PatchMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
