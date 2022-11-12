@@ -17,7 +17,6 @@ public class Ciclo4Application {
 		SpringApplication.run(Ciclo4Application.class, args);
 	}
 	
-	
 	@EnableWebSecurity
     @Configuration
     class WebSecurityConfig extends WebSecurityConfigurerAdapter {
